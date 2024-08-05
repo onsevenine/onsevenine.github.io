@@ -10,8 +10,7 @@ const { frontmatter } = Astro.props;
     <title>{frontmatter.title}</title>
   </head>
   <body>
-    <main class="prose lg:prose-xl mx-auto my-20">
-      <h1>{frontmatter.title} Notes</h1>
+    <main class="prose lg:prose-xl my-4 mx-2 md:mx-auto md:my-20">
       <slot />
     </main>
   </body>
