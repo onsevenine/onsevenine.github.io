@@ -1,0 +1,152 @@
+---
+layout: ../../layouts/markdown.astro
+title: PHP
+author: Nishant Bhagat
+---
+
+Run PHP built-in web-server
+
+```bash
+php -S localhost:8888
+```
+
+---
+How to get started with PHP code, to do this open PHP block by
+```php
+<?php
+
+// Code goes here
+
+?>
+```
+
+Syntax for different purposes:
+1. Print anything
+```php
+echo "Text goes here.";
+```
+
+2. To concatenate strings
+```php
+echo "Nishant "."Bhagat";
+
+%% This will print "Nishant Bhagat" %%
+%% See the difference with other languages which uses + to concatenate. %%
+```
+
+3. Declaring variables and templates
+```php
+$name = "Nishant";
+
+echo $name;
+echo "Hello, $name"; %% This is templating. Only works inside double quotes. %%
+```
+
+4. Conditional "if"
+```php
+if($condition) {
+
+%% Code goes here. %%
+
+}
+```
+
+5. Alternate syntax to print value
+```php
+<?php echo "Value"; ?>
+<?= "value" ?>
+
+%% Note that first line needed semicolon to execute. %%
+```
+
+6. Loop using foreach
+```php
+$books = [
+	"Book 1",
+	"Book 2",
+	"Book 3"
+];
+
+foreach ($books as $book) {
+	echo "<p>{$book}random</p>";
+}
+```
+
+or other wise what we can do:
+```php
+<?php foreach ($books as $book): ?>
+	<p><?= $book ?></p>
+<?php endforeach; ?>
+```
+
+7. Associative arrays
+```php
+$students = [
+	[
+		"name" => "Nishant Bhagat",
+		"role" => "Android Developer"
+	],
+	[
+		"name" => "Random Person",
+		"role" => "Web Developer"
+	]
+]
+
+%% To loop and accessing each value what we can do %%
+
+foreach ($students as $student) {
+	echo $student["name"] . ": " . $student["role"];
+}
+```
+
+8. Check equality using `===` (three equal signs).
+9. To write function use `function` keyword:
+```php
+function funcName($paramenter) {
+
+//Code goes here
+
+}
+```
+
+10. Pushing in array is different from other languages `$array[] = "Value";`, which is easy.
+11. Lambda functions
+```php
+$variableName = function($parameter) {
+
+//Code goes here.
+
+}
+
+//But to access this we have use it like variables not as function call.
+
+$variableName($argument); %% not %% variableName($argument);
+```
+12. To use a PHP file use can use it like `require "filename.php";`
+13. We don't need any trailing `?>` to PHP code when file has only pure PHP code.
+14. Ternary operator used for true false case:
+```php
+<?= 2 === 3 ? "If true" : "If false" ?>
+```
+15. To check for any variables out use `var_dump($variable);` function.
+16. Custom version of do-die function which is common in Laravel and Symfony:
+```php
+function dd($value) {
+	echo "<pre>";
+	echo var_dump($value);
+	echo "</pre>";
+
+	die(); %% This function will stop the execution of below codes. %%
+}
+```
+17. An important global variables which is lot useful is `$_SERVER`.
+18. We can get the URI from `$_SERVER` variable like:
+```php
+$uri = $_SERVER["REQUEST_URI"];
+
+%% We can parse it further to get base url and passed queries. %%
+
+$parsed_url = parse_url($uri);
+```
+19. Function to check whether a key is in array or not: `array_key_exists($key, $array);`.
+20. When an user tries to access not available links, we should send the browser 404 status code. For that purpose there is function called `http_response_code(404);` that can deal with this and ideally we should die the further processes using `die();`.
