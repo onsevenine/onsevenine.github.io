@@ -8,6 +8,7 @@ import Email from "@/assets/email.svg";
 
 const jersey = Jersey_10({
   weight: ["400"],
+  subsets: ["latin"],
 });
 
 export default function Home() {
