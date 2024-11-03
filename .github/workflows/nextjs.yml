@@ -50,7 +50,7 @@ jobs:
       #     fi
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.0.0
-        with: 
+        with:
           version: 9.12.3
       - name: Setup Node
         uses: actions/setup-node@v4
