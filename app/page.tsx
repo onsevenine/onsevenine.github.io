@@ -1,15 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { Jersey_10 } from "next/font/google";
 import Link from "next/link";
 
-import Github from "@/assets/github.svg";
-import GithubLight from "@/assets/github-light.svg";
-import LinkedIn from "@/assets/linkedin.svg";
-import LinkedInLight from "@/assets/linkedin-light.svg";
-import Email from "@/assets/email.svg";
-import EmailLight from "@/assets/email-light.svg";
 import { useEffect, useState } from "react";
 
 const jersey = Jersey_10({
@@ -37,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen transition-all duration-500">
       <nav className="flex items-center justify-between m-2 mb-8 md:m-8 lg:my-8 lg:m-auto max-w-[1000px]">
         <div className="border h-16 w-16 grid place-items-center">
           <h1 className={`${jersey.className} text-4xl pointer-events-none`}>
@@ -66,66 +59,88 @@ export default function Home() {
         </div>
       </nav>
       <section id="hero">
-        <span>Hi, I'm Nishant Bhagat</span>
+        <span className="text-lg">
+          Hi, I'm <b>Nishant Bhagat</b>
+        </span>
       </section>
       <section id="about" className="mb-8">
-        <h2 className="text-4xl font-bold mb-4">About</h2>
-        <p className="leading-loose">
-          I am currently student pursuing engineering. Being away from computers
-          always interested me to know them more. And this curiosity now helps
-          me to dig deeper while I learn programming. I wrote my first line of
-          code in my higher secondary school when I choose{" "}
-          <i>Computer Science</i> course, language I learnt was <i>C++</i> but
-          how it is related to web development, but it helped a lot to me to
-          understand programming concepts better. Before learning how to code I
-          used to take a look of website's source code, and try understand how
-          they are made and how they work. I started web development in freshman
-          year at college, when COVID-19 hit and classes were online.
-        </p>
+        <h2 className="text-2xl font-bold mb-4">About</h2>
+        <ul className="list-disc pl-4">
+          <li>
+            Love doing <strong>Code</strong>
+          </li>
+          <li>
+            Building{" "}
+            <Link href="https://cloord.com">
+              {" "}
+              <strong>
+                "<u>Cloord</u>"
+              </strong>
+            </Link>{" "}
+            - A SaaS platform to streamline school management process.
+          </li>
+          <li>
+            Currently student at Indian Institute of Technology, Guwahati.
+          </li>
+        </ul>
       </section>
       <section id="projects" className="mb-8">
-        <h2 className="text-4xl font-bold mb-4">Projects</h2>
-        <p className="text-xl"></p>
+        <h2 className="text-2xl font-bold mb-4">Projects</h2>
+        <div>
+          <h3 className="text-lg font-semibold">
+            Table Tennis Counter: Android App
+            <Link href="https://github.com/onsevenine/table_tennis_counter.git">
+              [<u>Link</u>]
+            </Link>
+          </h3>
+          <ul className="list-disc list-inside">
+            <li>App to count points in table tennis match.</li>
+            <li>
+              Different match mode is available, e.g. with or without deuce.
+            </li>
+            <li>Can choose for 4 different number of sets.</li>
+          </ul>
+        </div>
       </section>
       <section id="contact" className="mb-8">
-        <h2 className="text-4xl font-bold mb-4">Contact</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="overflow-hidden rounded-md border-[var(--foreground)] border-2 flex items-center">
-            <Image
-              src={colorScheme == "light" ? GithubLight : Github}
-              alt="Github"
-              className="h-16 w-16 bg-[var(--foreground)] p-4"
-            />
-            <span className="px-4 flex flex-col">
-              <span className="font-semibold">Github</span>
-              <Link href="https://github.com/onsevenine">onsevenine</Link>
-            </span>
-          </div>
-          <div className="overflow-hidden rounded-md border-[var(--foreground)] border-2 flex items-center">
-            <Image
-              src={colorScheme == "light" ? LinkedInLight : LinkedIn}
-              alt="LinkedIn"
-              className="h-16 w-16 bg-[var(--foreground)] p-4"
-            />
-            <span className="px-4 flex flex-col">
-              <span className="font-semibold">LinkedIn</span>
-              <Link href="https://linkedin.com/in/nishant17bhagat">
-                nishant17bhagat
-              </Link>
-            </span>
-          </div>
-          <div className="overflow-hidden rounded-md border-[var(--foreground)] border-2 flex items-center">
-            <Image
-              src={colorScheme == "light" ? EmailLight : Email}
-              alt="Email"
-              className="h-16 w-16 bg-[var(--foreground)] p-4"
-            />
-            <span className="px-4 flex flex-col">
-              <span className="font-semibold">Email</span>
-              <Link href="mailto:onsevenine@gmail.com">onsevenine</Link>
-            </span>
-          </div>
-        </div>
+        <h2 className="text-2xl font-bold mb-4">Contact</h2>
+        <table className="w-full">
+          <tbody>
+            <tr>
+              <td>
+                <Link href="https://github.com/onsevenine" className="group">
+                  <span className="font-semibold group-hover:underline">
+                    GitHub
+                  </span>
+                </Link>
+              </td>
+              <td>https://github.com/onsevenine</td>
+            </tr>
+            <tr>
+              <td>
+                <Link
+                  href="https://linkedin.com/in/nishant17bhagat"
+                  className="group"
+                >
+                  <span className="font-semibold group-hover:underline">
+                    LinkedIn
+                  </span>
+                </Link>
+              </td>
+              <td>https://linkedin.com/in/nishant17bhagat</td>
+            </tr>
+            <tr>
+              <td>
+                <Link href="mailto:onsevenine@gmail.com" className="group">
+                  <span className="font-semibold group-hover:underline">
+                    Email
+                  </span>
+                </Link>
+              </td>
+              <td>onsevenine@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>{" "}
       </section>
     </div>
   );
