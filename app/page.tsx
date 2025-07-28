@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="max-w-5xl mx-auto min-h-screen transition-all duration-500">
+    <div className="max-w-4xl mx-auto min-h-screen transition-all duration-500">
       <nav className="sticky top-0 w-full flex items-center px-4 py-8 rounded-full backdrop-blur-md">
         <Image
           src="https://avatars.githubusercontent.com/u/99410352?v=4"
@@ -22,14 +22,17 @@ export default function Home() {
       </nav>
       <section id="about" className="mb-8 mx-4">
         <p className="text-xl">
-          Hi, I'm <em>Nishant Bhagat</em>. Can call me a web developer and a
-          full time learner. Currently contributing to an educational institute
-          management application{" "}
+          <span className="text-2xl font-bold italic">
+            Loving making web experiences.
+          </span>
+          <br />
+          Currently building an educational institute management application{" "}
           <a href="https://cloord.com" className="text-blue-500">
             Cloord
           </a>{" "}
-          using <span className="underline">NextJS and AWS</span>. My core
-          interests are backend and cloud development(majorly on AWS).{" "}
+          using <span className="underline">NextJS and AWS</span>. <br />
+          My core interests are backend and cloud development(majorly on AWS).
+          <br />
           <strong>I'd like to work on any full-time or part-time jobs.</strong>
         </p>
       </section>
@@ -42,14 +45,14 @@ export default function Home() {
             <li>NextJS</li>
             <li>ReactJS</li>
             <li>NodeJS</li>
-            <li>AWS (S3, Lambda, Cognito,...)</li>
+            <li>AWS (S3, Lambda, DynamoDB,...)</li>
             <li>TailwindCSS</li>
           </ul>
         </div>
       </section>
       <section id="contact" className="mx-4 mb-8">
         <h2 className="text-2xl font-semibold mb-4">You can reach me at...</h2>
-        <table className="w-full text-xl">
+        <table className="w-full text-xl break-all">
           <tbody>
             <tr>
               <td>

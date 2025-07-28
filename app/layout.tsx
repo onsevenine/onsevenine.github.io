@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Cascadia_Code } from "next/font/google";
+import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 
-const cascadiaCode = Cascadia_Code({
+const robotoFlex = Roboto_Flex({
   subsets: ["latin"],
 });
 
@@ -18,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cascadiaCode.className} antialiased`}>
-        {children}
-      </body>
+      <body className={`${robotoFlex.className} antialiased`}>{children}</body>
     </html>
   );
 }
