@@ -25,7 +25,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
@@ -40,8 +41,6 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
       - name: Install dependencies
         run: pnpm install
       - name: Build with Next.js
