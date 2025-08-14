@@ -3,7 +3,7 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main"]
-    
+
   workflow_dispatch:
 
 permissions:
@@ -40,6 +40,8 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Install dependencies
         run: pnpm install
       - name: Build with Next.js
